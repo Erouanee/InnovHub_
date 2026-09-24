@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>Dictée utilise le micro pour transcrire votre voix. L'audio est traité uniquement sur cet ordinateur et n'est jamais enregistré sur le disque.</string>
+  <key>LSUIElement</key>
+  <true/>
+</dict>
+</plist>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dictée locale</title>
+    <link rel="stylesheet" href="/src/main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Dictée locale</h1>
+      <span id="model-badge" class="badge">…</span>
+    </header>
+
+    <section id="model-help" class="callout warn" hidden>
+      <strong>Modèle de transcription absent.</strong>
+      <p>Téléchargez-le une fois (réseau requis pour cette étape seulement), puis relancez l'app :</p>
+      <pre>./scripts/download-model.sh</pre>
+      <p class="muted">Emplacement attendu : <code id="model-path"></code></p>
+    </section>
+
+    <section id="error" class="callout error" hidden></section>
+
+    <section>
+      <div class="row">
+        <h2>Dernière transcription</h2>
+        <button id="copy" type="button" disabled>Copier</button>
+      </div>
+      <textarea id="text" readonly placeholder="Maintenez le raccourci et parlez…"></textarea>
+    </section>
+
+    <section>
+      <h2>Latence (fin de dictée → texte)</h2>
+      <dl id="timings" class="timings">
+        <div><dt>Arrêt micro</dt><dd data-k="capture_stop_ms">–</dd></div>
+        <div><dt>Prétraitement</dt><dd data-k="preprocess_ms">–</dd></div>
+        <div><dt>Transcription</dt><dd data-k="transcription_ms">–</dd></div>
+        <div class="total"><dt>Total</dt><dd data-k="total_ms">–</dd></div>
+      </dl>
+      <p id="meta" class="muted"></p>
+    </section>
+
+    <footer>
+      <p id="hint"></p>
+      <p class="muted">Traitement 100 % local. L'audio reste en mémoire et est effacé après la transcription.</p>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
